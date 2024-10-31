@@ -1,0 +1,13 @@
+.header {
+  background-color: #ff5722;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}

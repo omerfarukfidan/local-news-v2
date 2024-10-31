@@ -1,0 +1,14 @@
+.global-news-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .global-news-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  

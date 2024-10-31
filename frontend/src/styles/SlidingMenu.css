@@ -1,0 +1,26 @@
+.sliding-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff5722;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0px -2px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(0);
+}
+
+.sliding-menu a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.sliding-menu a:hover {
+  color: #ffcc00;
+}

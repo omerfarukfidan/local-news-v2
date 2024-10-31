@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./app/
+    ports:
+      - "5000:5000"
+    hostname: news_backend
+    networks:
+      newsnetwork:
+        aliases:
+          - news_backend
+
+  frontend:
+    build: ./frontend/
+    ports:
+      - "80:3000"  
+    depends_on:
+      - backend
+    networks:
+      - newsnetwork
+
+networks:
+  newsnetwork:
