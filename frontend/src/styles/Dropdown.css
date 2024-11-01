@@ -1,8 +1,54 @@
-.dropdown {
-    padding: 15px;
-    font-size: 16px;
-    margin-top: 20px;
-    width: 80%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
+.dropdown-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+}
+
+.clear-button:hover {
+  color: #ff0000; /* Hover rengini ayarlayabilirsiniz */
+}

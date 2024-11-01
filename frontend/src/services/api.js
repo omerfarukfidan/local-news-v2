@@ -1,6 +1,8 @@
+import config from '../config';
+
 export const fetchNews = async () => {
   try {
-    const response = await fetch('/news');
+    const response = await fetch(`${config.apiBaseUrl}/news`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -13,7 +15,7 @@ export const fetchNews = async () => {
 
 export const fetchCityNews = async (city) => {
   try {
-    const response = await fetch(`/news/${city}`);
+    const response = await fetch(`${config.apiBaseUrl}/news/${city}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -26,7 +28,7 @@ export const fetchCityNews = async (city) => {
 
 export const fetchDistinctCities = async () => {
   try {
-    const response = await fetch('/distinct-cities');
+    const response = await fetch(`${config.apiBaseUrl}/distinct-cities`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -39,7 +41,7 @@ export const fetchDistinctCities = async () => {
 
 export const fetchNewsUrl = async (newsId) => {
   try {
-    const response = await fetch(`/news-url/${newsId}`);
+    const response = await fetch(`${config.apiBaseUrl}/news-url/${newsId}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
