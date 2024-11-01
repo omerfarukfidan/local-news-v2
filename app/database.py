@@ -1,41 +1,23 @@
 import psycopg2
-import json
-import sys
 import os
+import sys
 
-# Get the current directory of this file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Construct the path to your config.json file
-config_path = os.path.join(current_dir, 'config.json')
-
-# Load the JSON config file
-with open(config_path) as config_file:
-    config = json.load(config_file)
+from app import load_config 
 
 def get_db_connection():
-    # Fetching the connection details from JSON config
-    server = config['DB_SERVER']
-    port = config['DB_PORT']
-    database = config['DB_NAME']
-    user = config['DB_USER']
-    password = config['DB_PASSWORD']
-    sslmode = config['DB_SSL_MODE']
-
+    config = load_config()  
+    
     try:
         # Connect to the PostgreSQL database
         conn = psycopg2.connect(
-            host=server,
-            port=port,
-            dbname=database,
-            user=user,
-            password=password,
-            sslmode=sslmode
+            host=config["DB_SERVER"],
+            port=config["DB_PORT"],
+            dbname=config["DB_NAME"],
+            user=config["DB_USER"],
+            password=config["DB_PASSWORD"],
+            sslmode=config["DB_SSL_MODE"]
         )
         return conn
     except Exception as e:
         print(f"Error connecting to the database: {e}")
         sys.exit(1)
-
-# Test the function
-get_db_connection()
